@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>结果集遍历Code值 | JTSYBlog</title>
+    
+    
+        <meta name="keywords" content="codevalue">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="首先获取所有的代码值  1leapcodevalue[] sexvalues = CodeTypeCache.getInstance().getCodeValues(&quot;ltpujnjs_sex&quot;);  遍历结果集  12345678 for (EntityBean data : datas)&amp;#123;    String sex = data.getString(&quot;sex&quot;);">
+<meta name="keywords" content="codevalue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="结果集遍历Code值">
+<meta property="og:url" content="https://jtsy.github.io/blog/wiki/leapcodevalue/index.html">
+<meta property="og:site_name" content="JTSYBlog">
+<meta property="og:description" content="首先获取所有的代码值  1leapcodevalue[] sexvalues = CodeTypeCache.getInstance().getCodeValues(&quot;ltpujnjs_sex&quot;);  遍历结果集  12345678 for (EntityBean data : datas)&amp;#123;    String sex = data.getString(&quot;sex&quot;);">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://paz1myrij.bkt.clouddn.com/favicon.png">
+<meta property="og:updated_time" content="2018-09-17T03:54:59.760Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="结果集遍历Code值">
+<meta name="twitter:description" content="首先获取所有的代码值  1leapcodevalue[] sexvalues = CodeTypeCache.getInstance().getCodeValues(&quot;ltpujnjs_sex&quot;);  遍历结果集  12345678 for (EntityBean data : datas)&amp;#123;    String sex = data.getString(&quot;sex&quot;);">
+<meta name="twitter:image" content="http://paz1myrij.bkt.clouddn.com/favicon.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="JTSYBlog" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/Wiki/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/Wiki/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Wiki/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/Wiki/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/Wiki/css/style.css">
+    <script src="/Wiki/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/Wiki/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/Wiki/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/Wiki/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+    
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/Wiki/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">JTSYBlog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/Wiki/.">首页</a>
+                
+                    <a class="main-nav-link" href="/Wiki/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/Wiki/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/Wiki/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/Wiki/about">关于</a>
+                
+                    <a class="main-nav-link" href="/Wiki/project">项目信息</a>
+                
+                    <a class="main-nav-link" href="/Wiki/atom.xml">RSS</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/Wiki/',
+        CONTENT_URL: '/Wiki/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/Wiki/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/Wiki/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/about">关于</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/project">项目信息</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/atom.xml">RSS</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-up fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" style="display: block;"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            LEAP
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            客户端
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file"><a href="/Wiki/wiki/dynacode/">html中代码表自动更新</a></li>  <li class="file"><a href="/Wiki/wiki/get-object-value/">获取数组的key & values</a></li>  <li class="file"><a href="/Wiki/wiki/leap-converesult/">Js直接获取返回值的数组</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            服务端
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file active"><a href="/Wiki/wiki/leapcodevalue/">结果集遍历Code值</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            工具&配置
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file"><a href="/Wiki/wiki/eclipse-formatter-codetemplates/">Eclipse | Formatter & CodeTemplates 格式化和代码注释</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            开源
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            接口
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file"><a href="/Wiki/wiki/SwaggerApi/">在LEAP项目如何使用Swagger调试Restful Api</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>recent</span></h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Wiki/wiki/leapcodevalue/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://paz1myrij.bkt.clouddn.com/favicon.png)" alt="结果集遍历Code值" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/Wiki/categories/LEAP/">LEAP</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/Wiki/categories/LEAP/服务端/">服务端</a></p>
+                            <p class="item-title"><a href="/Wiki/wiki/leapcodevalue/" class="title">结果集遍历Code值</a></p>
+                            <p class="item-date"><time datetime="2018-09-17T03:46:51.000Z" itemprop="datePublished">2018-09-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Wiki/wiki/get-object-value/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://paz1myrij.bkt.clouddn.com/favicon.png)" alt="获取数组的key &amp; values" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/Wiki/categories/LEAP/">LEAP</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/Wiki/categories/LEAP/客户端/">客户端</a></p>
+                            <p class="item-title"><a href="/Wiki/wiki/get-object-value/" class="title">获取数组的key &amp; values</a></p>
+                            <p class="item-date"><time datetime="2018-09-13T07:47:26.000Z" itemprop="datePublished">2018-09-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Wiki/wiki/leap-converesult/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://paz1myrij.bkt.clouddn.com/favicon.png)" alt="Js直接获取返回值的数组" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/Wiki/categories/LEAP/">LEAP</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/Wiki/categories/LEAP/客户端/">客户端</a></p>
+                            <p class="item-title"><a href="/Wiki/wiki/leap-converesult/" class="title">Js直接获取返回值的数组</a></p>
+                            <p class="item-date"><time datetime="2018-09-13T07:32:23.000Z" itemprop="datePublished">2018-09-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Wiki/wiki/eclipse-formatter-codetemplates/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://paz1myrij.bkt.clouddn.com/20180718170025.png)" alt="Eclipse | Formatter &amp; CodeTemplates 格式化和代码注释" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/Wiki/categories/工具-配置/">工具&配置</a></p>
+                            <p class="item-title"><a href="/Wiki/wiki/eclipse-formatter-codetemplates/" class="title">Eclipse | Formatter &amp; CodeTemplates 格式化和代码注释</a></p>
+                            <p class="item-date"><time datetime="2018-09-13T07:26:49.000Z" itemprop="datePublished">2018-09-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Wiki/wiki/dynacode/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://paz1myrij.bkt.clouddn.com/20180913152413.png)" alt="html中代码表自动更新" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/Wiki/categories/LEAP/">LEAP</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/Wiki/categories/LEAP/客户端/">客户端</a></p>
+                            <p class="item-title"><a href="/Wiki/wiki/dynacode/" class="title">html中代码表自动更新</a></p>
+                            <p class="item-date"><time datetime="2018-09-13T07:22:31.000Z" itemprop="datePublished">2018-09-13</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Wiki/archives/2018/09/">September 2018</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tags</span></h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/CodeTemplates/">CodeTemplates</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/ConvertResult/">ConvertResult</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/Eclipse/">Eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/Formatter/">Formatter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/LEAP/">LEAP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/Restful-Api/">Restful Api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/Swagger/">Swagger</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/codevalue/">codevalue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/values/">values</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/代码表/">代码表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/数组/">数组</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tag cloud</span></h3>
+        <div class="widget tagcloud">
+            <a href="/Wiki/tags/CodeTemplates/" style="font-size: 10px;">CodeTemplates</a> <a href="/Wiki/tags/ConvertResult/" style="font-size: 10px;">ConvertResult</a> <a href="/Wiki/tags/Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/Wiki/tags/Formatter/" style="font-size: 10px;">Formatter</a> <a href="/Wiki/tags/LEAP/" style="font-size: 10px;">LEAP</a> <a href="/Wiki/tags/Restful-Api/" style="font-size: 10px;">Restful Api</a> <a href="/Wiki/tags/Swagger/" style="font-size: 10px;">Swagger</a> <a href="/Wiki/tags/codevalue/" style="font-size: 10px;">codevalue</a> <a href="/Wiki/tags/values/" style="font-size: 10px;">values</a> <a href="/Wiki/tags/代码表/" style="font-size: 10px;">代码表</a> <a href="/Wiki/tags/数组/" style="font-size: 10px;">数组</a>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-leapcodevalue" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/Wiki/categories/LEAP/">LEAP</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/Wiki/categories/LEAP/服务端/">服务端</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/Wiki/tags/codevalue/">codevalue</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/Wiki/wiki/leapcodevalue/">
+            <time datetime="2018-09-17T03:46:51.000Z" itemprop="datePublished">2018-09-17</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/null/http://github.com/JTSY/blog.git/raw/master/source/_posts/leapcodevalue.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/null/http://github.com/JTSY/blog.git/edit/master/source/_posts/leapcodevalue.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/null/http://github.com/JTSY/blog.git/commits/master/source/_posts/leapcodevalue.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            结果集遍历Code值
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <ul>
+<li>首先获取所有的代码值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">leapcodevalue[] sexvalues = CodeTypeCache.getInstance().getCodeValues(<span class="string">"ltpujnjs_sex"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>遍历结果集</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">for</span> (EntityBean data : datas)</span><br><span class="line">&#123;</span><br><span class="line">    String sex = data.getString(<span class="string">"sex"</span>);</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isNoneEmpty(sex)) </span><br><span class="line">        &#123;</span><br><span class="line">            data.set(<span class="string">"cnsex"</span>, LTPUjnjs_getCodevalue(sexvalues, sex));</span><br><span class="line">        &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将结果集中的值带入遍历<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * values 所有的代码值</span></span><br><span class="line"><span class="comment"> * code 结果集中的值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">LTPUjnjs_getCodevalue</span><span class="params">(leapcodevalue[] values, String code)</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (values != <span class="keyword">null</span> &amp;&amp; StringUtils.isNoneEmpty(code)) </span><br><span class="line">       &#123;</span><br><span class="line">          <span class="keyword">for</span> (leapcodevalue value : values) </span><br><span class="line">          &#123;</span><br><span class="line">              <span class="keyword">if</span> (code.equals(value.getcodeid())) </span><br><span class="line">              &#123;</span><br><span class="line">                 <span class="keyword">return</span> value.getcodevalue(); </span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+    
+        <a href="/Wiki/wiki/get-object-value/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">获取数组的key &amp; values</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            交通运输行业应用部 &copy; 2018 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+           <!--  <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a> -->
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        <script src="/Wiki/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/Wiki/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/Wiki/js/main.js"></script>
+
+    </div>
+</body>

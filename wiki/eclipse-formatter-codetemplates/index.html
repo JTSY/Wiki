@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Eclipse | Formatter &amp; CodeTemplates 格式化和代码注释 | JTSYBlog</title>
+    
+    
+        <meta name="keywords" content="Eclipse,Formatter,CodeTemplates">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="团队里面最好能统一风格，这样在看别人代码的时候就比较清晰。 CodeTemplates 写注释比不写好注释的格式其实也有模板的   没有用注释模板  使用注释模板   /** */  一般用在Method上面//  单行注册用在代码的上面， 也有人用在代码的后面，但是个人不建议     Formatter 关于代码格式化目前只碰到大括号是否独立一行的情况一下格式化是以大括号独立一行为标准">
+<meta name="keywords" content="Eclipse,Formatter,CodeTemplates">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eclipse | Formatter &amp; CodeTemplates 格式化和代码注释">
+<meta property="og:url" content="https://jtsy.github.io/blog/wiki/eclipse-formatter-codetemplates/index.html">
+<meta property="og:site_name" content="JTSYBlog">
+<meta property="og:description" content="团队里面最好能统一风格，这样在看别人代码的时候就比较清晰。 CodeTemplates 写注释比不写好注释的格式其实也有模板的   没有用注释模板  使用注释模板   /** */  一般用在Method上面//  单行注册用在代码的上面， 也有人用在代码的后面，但是个人不建议     Formatter 关于代码格式化目前只碰到大括号是否独立一行的情况一下格式化是以大括号独立一行为标准">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://paz1myrij.bkt.clouddn.com/20180718170025.png">
+<meta property="og:updated_time" content="2018-09-13T07:29:28.312Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Eclipse | Formatter &amp; CodeTemplates 格式化和代码注释">
+<meta name="twitter:description" content="团队里面最好能统一风格，这样在看别人代码的时候就比较清晰。 CodeTemplates 写注释比不写好注释的格式其实也有模板的   没有用注释模板  使用注释模板   /** */  一般用在Method上面//  单行注册用在代码的上面， 也有人用在代码的后面，但是个人不建议     Formatter 关于代码格式化目前只碰到大括号是否独立一行的情况一下格式化是以大括号独立一行为标准">
+<meta name="twitter:image" content="http://paz1myrij.bkt.clouddn.com/20180718170025.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="JTSYBlog" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/Wiki/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/Wiki/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Wiki/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/Wiki/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/Wiki/css/style.css">
+    <script src="/Wiki/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/Wiki/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/Wiki/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/Wiki/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+    
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/Wiki/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">JTSYBlog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/Wiki/.">首页</a>
+                
+                    <a class="main-nav-link" href="/Wiki/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/Wiki/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/Wiki/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/Wiki/about">关于</a>
+                
+                    <a class="main-nav-link" href="/Wiki/project">项目信息</a>
+                
+                    <a class="main-nav-link" href="/Wiki/atom.xml">RSS</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/Wiki/',
+        CONTENT_URL: '/Wiki/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/Wiki/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/Wiki/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/about">关于</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/project">项目信息</a></td>
+                
+                    <td><a class="main-nav-link" href="/Wiki/atom.xml">RSS</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-up fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" style="display: block;"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            LEAP
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            客户端
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file"><a href="/Wiki/wiki/dynacode/">html中代码表自动更新</a></li>  <li class="file"><a href="/Wiki/wiki/get-object-value/">获取数组的key & values</a></li>  <li class="file"><a href="/Wiki/wiki/leap-converesult/">Js直接获取返回值的数组</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            服务端
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file"><a href="/Wiki/wiki/leapcodevalue/">结果集遍历Code值</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            工具&配置
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file active"><a href="/Wiki/wiki/eclipse-formatter-codetemplates/">Eclipse | Formatter & CodeTemplates 格式化和代码注释</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            开源
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            接口
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file"><a href="/Wiki/wiki/SwaggerApi/">在LEAP项目如何使用Swagger调试Restful Api</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>recent</span></h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Wiki/wiki/leapcodevalue/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://paz1myrij.bkt.clouddn.com/favicon.png)" alt="结果集遍历Code值" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/Wiki/categories/LEAP/">LEAP</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/Wiki/categories/LEAP/服务端/">服务端</a></p>
+                            <p class="item-title"><a href="/Wiki/wiki/leapcodevalue/" class="title">结果集遍历Code值</a></p>
+                            <p class="item-date"><time datetime="2018-09-17T03:46:51.000Z" itemprop="datePublished">2018-09-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Wiki/wiki/get-object-value/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://paz1myrij.bkt.clouddn.com/favicon.png)" alt="获取数组的key &amp; values" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/Wiki/categories/LEAP/">LEAP</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/Wiki/categories/LEAP/客户端/">客户端</a></p>
+                            <p class="item-title"><a href="/Wiki/wiki/get-object-value/" class="title">获取数组的key &amp; values</a></p>
+                            <p class="item-date"><time datetime="2018-09-13T07:47:26.000Z" itemprop="datePublished">2018-09-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Wiki/wiki/leap-converesult/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://paz1myrij.bkt.clouddn.com/favicon.png)" alt="Js直接获取返回值的数组" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/Wiki/categories/LEAP/">LEAP</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/Wiki/categories/LEAP/客户端/">客户端</a></p>
+                            <p class="item-title"><a href="/Wiki/wiki/leap-converesult/" class="title">Js直接获取返回值的数组</a></p>
+                            <p class="item-date"><time datetime="2018-09-13T07:32:23.000Z" itemprop="datePublished">2018-09-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Wiki/wiki/eclipse-formatter-codetemplates/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://paz1myrij.bkt.clouddn.com/20180718170025.png)" alt="Eclipse | Formatter &amp; CodeTemplates 格式化和代码注释" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/Wiki/categories/工具-配置/">工具&配置</a></p>
+                            <p class="item-title"><a href="/Wiki/wiki/eclipse-formatter-codetemplates/" class="title">Eclipse | Formatter &amp; CodeTemplates 格式化和代码注释</a></p>
+                            <p class="item-date"><time datetime="2018-09-13T07:26:49.000Z" itemprop="datePublished">2018-09-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Wiki/wiki/dynacode/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://paz1myrij.bkt.clouddn.com/20180913152413.png)" alt="html中代码表自动更新" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/Wiki/categories/LEAP/">LEAP</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/Wiki/categories/LEAP/客户端/">客户端</a></p>
+                            <p class="item-title"><a href="/Wiki/wiki/dynacode/" class="title">html中代码表自动更新</a></p>
+                            <p class="item-date"><time datetime="2018-09-13T07:22:31.000Z" itemprop="datePublished">2018-09-13</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Wiki/archives/2018/09/">September 2018</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tags</span></h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/CodeTemplates/">CodeTemplates</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/ConvertResult/">ConvertResult</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/Eclipse/">Eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/Formatter/">Formatter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/LEAP/">LEAP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/Restful-Api/">Restful Api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/Swagger/">Swagger</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/codevalue/">codevalue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/values/">values</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/代码表/">代码表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Wiki/tags/数组/">数组</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tag cloud</span></h3>
+        <div class="widget tagcloud">
+            <a href="/Wiki/tags/CodeTemplates/" style="font-size: 10px;">CodeTemplates</a> <a href="/Wiki/tags/ConvertResult/" style="font-size: 10px;">ConvertResult</a> <a href="/Wiki/tags/Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/Wiki/tags/Formatter/" style="font-size: 10px;">Formatter</a> <a href="/Wiki/tags/LEAP/" style="font-size: 10px;">LEAP</a> <a href="/Wiki/tags/Restful-Api/" style="font-size: 10px;">Restful Api</a> <a href="/Wiki/tags/Swagger/" style="font-size: 10px;">Swagger</a> <a href="/Wiki/tags/codevalue/" style="font-size: 10px;">codevalue</a> <a href="/Wiki/tags/values/" style="font-size: 10px;">values</a> <a href="/Wiki/tags/代码表/" style="font-size: 10px;">代码表</a> <a href="/Wiki/tags/数组/" style="font-size: 10px;">数组</a>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-eclipse-formatter-codetemplates" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/Wiki/categories/工具-配置/">工具&配置</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/Wiki/tags/CodeTemplates/">CodeTemplates</a>, <a class="tag-link" href="/Wiki/tags/Eclipse/">Eclipse</a>, <a class="tag-link" href="/Wiki/tags/Formatter/">Formatter</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/Wiki/wiki/eclipse-formatter-codetemplates/">
+            <time datetime="2018-09-13T07:26:49.000Z" itemprop="datePublished">2018-09-13</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/null/http://github.com/JTSY/blog.git/raw/master/source/_posts/eclipse-formatter-codetemplates.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/null/http://github.com/JTSY/blog.git/edit/master/source/_posts/eclipse-formatter-codetemplates.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/null/http://github.com/JTSY/blog.git/commits/master/source/_posts/eclipse-formatter-codetemplates.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Eclipse | Formatter &amp; CodeTemplates 格式化和代码注释
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <p>团队里面最好能统一风格，这样在看别人代码的时候就比较清晰。</p>
+<h2><span id="codetemplates">CodeTemplates</span></h2><blockquote>
+<p>写注释比不写好<br>注释的格式其实也有模板的</p>
+</blockquote>
+<ul>
+<li><p>没有用注释模板<br><img src="http://paz1myrij.bkt.clouddn.com/20180718165007.png" alt="image"></p>
+</li>
+<li><p>使用注释模板<br><img src="http://paz1myrij.bkt.clouddn.com/20180718165620.png" alt="image"></p>
+</li>
+</ul>
+<p><code>/** */</code>  一般用在<code>Method</code>上面<br><code>//</code>  单行注册用在代码的上面， 也有人用在代码的后面，但是个人不建议    </p>
+<h2><span id="formatter">Formatter</span></h2><blockquote>
+<p>关于代码格式化目前只碰到大括号是否独立一行的情况<br>一下格式化是以大括号独立一行为标准    </p>
+</blockquote>
+<ul>
+<li><p>格式化前<br><img src="http://paz1myrij.bkt.clouddn.com/20180718165620.png" alt="image"></p>
+</li>
+<li><p>格式化后<br><img src="http://paz1myrij.bkt.clouddn.com/20180718170025.png" alt="image"></p>
+</li>
+</ul>
+<p>格式化后代码阅读起来比较清晰   </p>
+<h2><span id="eclipse-配置formatter">Eclipse 配置<code>Formatter</code></span></h2><p>在Eclipse工具栏选择 <code>Preferences</code> -&gt; <code>Java</code> -&gt; <code>Code Style</code> -&gt; <code>Formatter</code></p>
+<p><img src="http://paz1myrij.bkt.clouddn.com/20180718171438.png" alt="image"></p>
+<ul>
+<li>选择 <code>Edit...</code> 或者 ‘New…’</li>
+</ul>
+<p><img src="http://paz1myrij.bkt.clouddn.com/20180718171618.png" alt="image"></p>
+<h3><span id="indentation-缩进"><code>Indentation</code> 缩进</span></h3><p>我个人习惯将<code>Tab policy</code> 选择为 <code>Spaces only</code>，因为可以保证在不同的IDE中代码的兼容性比较好<br>在使用Tab的时候实际上是空了4格    </p>
+<h3><span id="brace-positions-配置大括号"><code>Brace positions</code> 配置大括号</span></h3><ul>
+<li><code>Same line</code> 在同一行</li>
+<li><code>Next line</code> 换行（大括号独立一行）</li>
+<li><code>Next line indented</code> 换行并缩进</li>
+<li><code>Next line on wrap</code> 不知道</li>
+</ul>
+<p><strong>其他的配置没有研究过，有兴趣可以自己去研究</strong><br>或者参考<a href="https://blog.csdn.net/jmyue/article/details/11060003" rel="external nofollow noopener noreferrer" target="_blank">玩转Eclipse — 自动代码规范化 - CSDN博客</a></p>
+<p>或者直接导入我的<code>Formatter</code>模板</p>
+<h2><span id="eclipse-配置codetemplate">Eclipse 配置<code>CodeTemplate</code></span></h2><p>在Eclipse工具栏选择  <code>Preferences</code> -&gt; <code>Java</code> -&gt; <code>Code Style</code> -&gt; <code>Code Templates</code><br><img src="http://paz1myrij.bkt.clouddn.com/20180718181437.png" alt="">    </p>
+<p>在<code>Comments</code> 中 配置各个类型的注释格式</p>
+<p>选中类型后选择<code>Edit...</code>开始编辑<br><img src="http://paz1myrij.bkt.clouddn.com/20180718182305.png" alt="image"><br><code>Insert Variable...</code> 可以选择各种参数    </p>
+<p>配置好后使用方式是在<code>method</code>上 输入<code>/** + 回车</code> 就会显示配置的注释    </p>
+<p>也可以下载我的<code>CodeTemplate</code> 模板导入<br>如果使用我的模板请将<code>@author</code> 改成你自己的名字</p>
+<p><a href="https://github.com/LxHubei/IDE-Style" rel="external nofollow noopener noreferrer" target="_blank">模板下载地址</a></p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/Wiki/wiki/leap-converesult/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Js直接获取返回值的数组
+                
+            </div>
+        </a>
+    
+    
+        <a href="/Wiki/wiki/dynacode/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">html中代码表自动更新</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            交通运输行业应用部 &copy; 2018 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+           <!--  <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a> -->
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        <script src="/Wiki/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/Wiki/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/Wiki/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/Wiki/js/main.js"></script>
+
+    </div>
+</body>
